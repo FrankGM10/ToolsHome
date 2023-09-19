@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToolsHome.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to T O O L S   H O M E!"
+                HorizontalOptions="CenterAndExpand"/>
+            <Button x:Name="mts2"
+                   BackgroundColor="{StaticResource colorPrimary}"
+                   Text="Calcular Mts2"
+                   VerticalOptions="CenterAndExpand"
+                   Clicked="mts2_Clicked"/>
+            <Button x:Name="ToDo"
+                   BackgroundColor="{StaticResource colorPrimary}"
+                   Text="ToDo"
+                   VerticalOptions="CenterAndExpand"
+                   TextTransform="None"
+                   Clicked="ToDo_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

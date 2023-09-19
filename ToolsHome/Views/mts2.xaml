@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="FRANK GIRALDO"
+             x:Class="ToolsHome.Views.mts2">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Alto"/>
+            <Entry Placeholder="Alto" 
+                   x:Name="txtAlto"/>
+            <Label Text="Ancho"/>
+            <Entry Placeholder="Ancho" 
+                   x:Name="txtAncho"/>
+            <Button x:Name="btnCalcular"
+                    Text="Calcular"
+                    BackgroundColor="Red"
+                    Clicked="Button_Clicked"/>
+            <Label Text="Respuesta"/>
+            <Entry Placeholder="Respuesta" 
+                   x:Name="lblRespuesta"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

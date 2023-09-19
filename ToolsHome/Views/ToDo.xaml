@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToolsHome.Views.ToDo">
+    <ContentPage.Content>
+        <StackLayout Margin="50">
+            <!--ListView con arreglos desde XAML -->
+            <ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Tarea 1</x:String>
+                        <x:String>Tarea 2</x:String>
+                        <x:String>Tarea 3</x:String>
+                    </x:Array>
+                </ListView.ItemsSource>
+            </ListView>
+            <!--ListView con arreglos desde behind code -->
+            <ListView x:Name="listal">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding}"
+                                   Margin="0"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--ListView con modelos -->
+            <ListView x:Name="lista3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Descripcion}" 
+                                   Margin="0"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--CollectionView con Modelos-->
+            <CollectionView x:Name="cvLista4"
+                            Margin="5"
+                            SelectionMode="Multiple">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <FlexLayout Direction="Row"
+                                    HeightRequest="60"
+                                    WidthRequest="150"
+                                    AlignItems="Center"
+                                    JustifyContent="SpaceAround"
+                                    BackgroundColor="{StaticResource colorAccent}">
+                            
+                            <Label Text="{Binding Descripcion}"/>
+                            <Label Text="{Binding Estado}"/>
+                            <Label Text="{Binding FechaRegistro}"/>
+                        </FlexLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
