@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToolsHome.Views.CrearTareas">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Grabar"
+                 Order="Primary"
+                 Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Descripcion"/>
+            <Entry x:Name="txtDescripcion"/>
+            <Label Text="Fecha de Registro"/>
+            <DatePicker x:Name="calFecha"/>
+            <Label Text="Estado"/>
+            <Picker x:Name="cmbEstado">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Pendiente</x:String>
+                        <x:String>Completo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
