@@ -15,4 +15,3 @@ C:\Users\frank\OneDrive\Desktop\C#\ToolsHome\ToolsHome\obj\Debug\netstandard2.0\
 C:\Users\frank\OneDrive\Desktop\C#\ToolsHome\ToolsHome\obj\Debug\netstandard2.0\Views\HomePage.xaml.g.cs
 C:\Users\frank\OneDrive\Desktop\C#\ToolsHome\ToolsHome\obj\Debug\netstandard2.0\Views\mts2.xaml.g.cs
 C:\Users\frank\OneDrive\Desktop\C#\ToolsHome\ToolsHome\obj\Debug\netstandard2.0\Views\ToDo.xaml.g.cs
-C:\Users\frank\OneDrive\Desktop\C#\ToolsHome\ToolsHome\obj\Debug\netstandard2.0\Views\CrearTareas.xaml.g.cs

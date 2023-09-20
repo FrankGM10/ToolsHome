@@ -1,18 +1,12 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Text;
 
 namespace ToolsHome.Models
 {
     public class Tarea
     {
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        [PrimaryKey,AutoIncrement]
-
-        public int IdTarea { get; set; }
+        public int Id { get; set; }
 
         public string Descripcion {  get; set; }
 
