@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ToolsHome.Views.ToDo">
-    <ContentPage.Content>
+    <!--<ContentPage.Content>
         <StackLayout Margin="50">
-            <!--ListView con arreglos desde XAML -->
+            --><!--ListView con arreglos desde XAML --><!--
             <ListView>
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
@@ -14,7 +14,7 @@
                     </x:Array>
                 </ListView.ItemsSource>
             </ListView>
-            <!--ListView con arreglos desde behind code -->
+            --><!--ListView con arreglos desde behind code --><!--
             <ListView x:Name="listal">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -26,7 +26,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <!--ListView con modelos -->
+            --><!--ListView con modelos --><!--
             <ListView x:Name="lista3">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -37,7 +37,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <!--CollectionView con Modelos-->
+            --><!--CollectionView con Modelos--><!--
             <CollectionView x:Name="cvLista4"
                             Margin="5"
                             SelectionMode="Multiple">
@@ -52,11 +52,37 @@
                                     AlignItems="Center"
                                     JustifyContent="SpaceAround"
                                     BackgroundColor="{StaticResource colorAccent}">
-                            
+
                             <Label Text="{Binding Descripcion}"/>
                             <Label Text="{Binding Estado}"/>
                             <Label Text="{Binding FechaRegistro}"/>
                         </FlexLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Order="Primary"
+                     Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <CollectionView x:Name="cvTareas">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Label Text="{Binding Descripcion}"/>
+                            <StackLayout Grid.Row="1" Margin="10,10,10,10">
+                                <Label Text="{Binding Estado}" />
+                                <Label Text="{Binding FechaRegistro, StringFormat='Fecha: {0:dd/MM/yyyy}'}" />
+                            </StackLayout>
+                        </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
