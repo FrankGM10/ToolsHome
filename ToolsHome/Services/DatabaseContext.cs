@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using ToolsHome.Models;
+using ToolsHome.Views;
 
 namespace ToolsHome.Services
 {
@@ -23,5 +24,11 @@ namespace ToolsHome.Services
         {
             return await Connection.InsertAsync(item);
         }
+
+        public async Task<int> DeleteItemAsync(Tarea item)
+        {
+            return await Connection.DeleteAsync(item);
+        }
+
     }
 }

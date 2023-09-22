@@ -29,11 +29,35 @@ namespace ToolsHome.Views
         {
             var Tareas = await App.Context.GetItemsAsynx();
             cvTareas.ItemsSource = Tareas;
+            
         }
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CrearTareas());
+        }
+
+        private async void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            var tarea = (Tarea)((Button)sender).CommandParameter;
+
+            if (await DisplayAlert("Confirmación", "¿Seguro que quiere Eliminar?", "Sí", "No"))
+            {
+                int rowsAffected = await App.Context.DeleteItemAsync(tarea);
+                if (rowsAffected > 0)
+                {
+                    var tarea1 = (List<Tarea>)cvTareas.ItemsSource;
+                    tarea1.Remove(tarea);
+
+                    cvTareas.ItemsSource = null;
+                    cvTareas.ItemsSource = tarea1;
+
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No se pudo eliminar", "Aceptar");
+                }
+            }
         }
     }
 }

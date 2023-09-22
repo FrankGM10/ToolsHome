@@ -12,7 +12,7 @@ namespace ToolsHome.Models
 
         [PrimaryKey,AutoIncrement]
 
-        public int IdTarea { get; set; }
+        public int Id { get; set; }
 
         public string Descripcion {  get; set; }
 
